@@ -5,7 +5,7 @@ export default function Home() {
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Selecione um prompt</h1>
           <p className="text-gray-400">
-            Escalha um prompt da lista ao lado para visualizar e editar
+            Escolha um prompt da lista ao lado para visualizar e editar
           </p>
         </div>
       </div>

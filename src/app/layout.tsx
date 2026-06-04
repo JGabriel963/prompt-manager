@@ -1,7 +1,9 @@
+import { Sidebar } from '@/components/sidebar';
 import './globals.css';
 import type { Metadata } from 'next';
 
 import { Inter } from 'next/font/google';
+import { TRPCReactProvider } from '@/trpc/client';
 
 export const metadata: Metadata = {
   title: 'Prompt Manager',
@@ -21,17 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${inter.variable} antialiased bg-gray-900 text-white`}>
-        <section className="flex h-screen">
+      <body
+        className={`${inter.variable} antialiased bg-gray-900 text-white flex h-screen`}
+      >
+        <TRPCReactProvider>
+          <Sidebar />
+
           <main className="relative flex-1 overflow-auto min-w-0">
-            <div
-              className="p-4 sm:p-6 md:p-8 max-w-full md:max-w-3xl mx-auto h-full
-            "
-            >
+            <div className="p-4 sm:p-6 md:p-8 max-w-full md:max-w-3xl mx-auto h-full">
               {children}
             </div>
           </main>
-        </section>
+        </TRPCReactProvider>
       </body>
     </html>
   );
