@@ -1,4 +1,4 @@
-import prisma from '@/lib/prisma';
+import { prisma } from '@/lib/prisma';
 import { baseProcedure, createTRPCRouter } from '../init';
 
 export const promptRoutes = createTRPCRouter({
